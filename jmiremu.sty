@@ -1,0 +1,68 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{jmiremu}[2025/11/14 JMIR-like manuscript emulation]
+
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{setspace}
+\RequirePackage{titlesec}
+\RequirePackage{authblk}
+\RequirePackage{graphicx}
+\RequirePackage{caption}
+\RequirePackage{booktabs}
+\RequirePackage{hyperref}
+\RequirePackage{enumitem}
+\RequirePackage{float}
+\RequirePackage{microtype}
+
+\onehalfspacing
+\setlist[itemize]{noitemsep,topsep=2pt}
+\setlist[enumerate]{noitemsep,topsep=2pt}
+
+\titleformat{\section}{\normalfont\bfseries\Large}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\bfseries\large}{\thesubsection.}{0.6em}{}
+\titleformat{\subsubsection}{\normalfont\bfseries}{\thesubsubsection.}{0.6em}{}
+
+\captionsetup{labelfont=bf}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=black,
+  citecolor=blue,
+  pdfauthor={Sandro Loch},
+  pdftitle={HPH Framework Manuscript}
+}
+
+% Structured abstract environment
+\newenvironment{structuredabstract}{
+  \par\noindent\textbf{Abstract}\par
+  \vspace{0.5\baselineskip}\noindent
+  \begin{description}[leftmargin=1.5em,style=nextline]
+}{
+  \end{description}\par\vspace{0.5\baselineskip}
+}
+
+% Keywords line
+\newcommand{\keywordsline}[1]{\par\noindent\textbf{Keywords: }#1\par}
+
+% Author/affiliation blocks
+\renewcommand\Authfont{\large}
+\renewcommand\Affilfont{\normalsize}
+\setlength{\affilsep}{0.5em}
+
+% Corresponding author block
+\newcommand{\corresponding}[4]{%
+\par\noindent\textbf{Corresponding Author:}\\
+#1\\#2\\Email: \href{mailto:#3}{#3}\\ORCID: #4\par}
+
+% Ethics note macro
+\newcommand{\ethicsnote}[1]{\par\noindent\textbf{Ethics: }#1\par}
+
+% Reference style note (AMA-like numeric)
+% Users may plug in any .bst; this package only adjusts spacing.
+\makeatletter
+\renewcommand\@biblabel[1]{[#1]}
+\makeatother
