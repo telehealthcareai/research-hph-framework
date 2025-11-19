@@ -1,0 +1,5 @@
+watchdog
+jinja2
+pyyaml
+pre-commit
+ruff
