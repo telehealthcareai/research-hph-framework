@@ -22,12 +22,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           miniconda-version: "latest"
           environment-file: conda/dev.yaml
           channels: conda-forge,nodefaults
-          activate-environment: osl-paperwork
+          activate-environment: research-hph
           use-mamba: true
           miniforge-variant: Mambaforge
 
@@ -39,7 +39,4 @@ jobs:
 
       - name: run tests
         run: |
-          cd agreement
-          mkdir -p build
-          python docgen.py --data ./data/202301.yaml --output ./build --template templates/graph
-          python docgen.py --data ./data/202301.yaml --output ./build --template templates/osl
+          ./scripts/builders.sh
