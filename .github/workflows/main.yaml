@@ -1,0 +1,42 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    concurrency:
+      group: ci-tests-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniconda-version: "latest"
+          environment-file: conda/dev.yaml
+          channels: conda-forge,nodefaults
+          activate-environment: research-hph
+          use-mamba: true
+          miniforge-variant: Mambaforge
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install texlive
+          sudo apt install texlive-fonts-extra
+
+      - name: run tests
+        run: |
+          ./scripts/builders.sh
