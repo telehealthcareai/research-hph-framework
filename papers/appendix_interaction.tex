@@ -1,0 +1,117 @@
+
+% === Appendix B: Physician Interaction Protocol (Baseline vs. HPH) ===
+\section{Physician Interaction Protocol}
+\label{app:interaction}
+
+\subsection*{Purpose}
+This appendix specifies exactly how clinicians interact with the baseline
+(OpenMRS) and the HPH prototype to ensure parity, reproducibility, and
+clarity for replication.
+
+\subsection*{Systems under comparison}
+\begin{itemize}
+  \item \textbf{Baseline (Standard):} OpenMRS Reference Application with FHIR2
+  (FHIR R4). No decision-support/AI modules enabled.
+  \item \textbf{HPH (Prototype):} HPH UI reading the identical FHIR Bundle per
+  case. Assistive features (summaries, rationale, provenance) are enabled and
+  labeled as such.
+\end{itemize}
+
+\subsection*{Data seeding and interaction rule}
+Both conditions use the \emph{identical} canonical FHIR R4 Bundle per case;
+OpenMRS is pre-seeded via FHIR2 \emph{before} sessions, and HPH reads the same
+Bundle. Participants interact only through the respective UIs. No manual data
+entry or edits are performed during sessions.
+
+\subsection*{Pre-session setup (facilitator checklist)}
+\begin{enumerate}
+  \item Verify the correct role-based account (IM/FP, EM, Psychiatry) is
+        logged in for the participant.
+  \item Open the assigned case (\emph{A} or \emph{B}) on the landing page
+        of the designated system (Baseline or HPH) according to the
+        counterbalanced order sheet.
+  \item Confirm that Notes, Labs, Medications, Imaging/Reports, and Timeline
+        views are accessible.
+  \item Start screen and audio capture; confirm consent and think-aloud.
+  \item Set a visible countdown timer for the block (10--12 minutes).
+\end{enumerate}
+
+\subsection*{Session design and timing}
+Within-subjects, counterbalanced (Latin square: Case A/B $\times$ Baseline/HPH).
+Each participant completes \textbf{both} cases in \textbf{both} workflows.
+\begin{enumerate}
+  \item Block~1: Case (A or B) with \emph{Workflow 1} (Baseline or HPH) (10--12 min).
+  \item Block~2: Same Case with \emph{Workflow 2} (HPH or Baseline) (10--12 min).
+  \item Repeat Blocks 1--2 with the other Case (B or A).
+  \item Post-task questionnaires (Likert scales) and 8--10 min interview.
+\end{enumerate}
+
+\subsection*{Task checklist (display to participants)}
+\begin{itemize}
+  \item Identify immediate risks and red flags.
+  \item Propose initial orders/actions (labs, imaging, meds) and disposition.
+  \item Provide a short written rationale (2--3 lines) in the notes area.
+  \item Identify information gaps or missing data that could change decisions.
+\end{itemize}
+
+\subsection*{Role prompts (shown on a card beside the screen)}
+\begin{itemize}
+  \item \textbf{IM/FP:} Coherent plan for first visit/urgent setting; continuity
+        considerations for follow-up.
+  \item \textbf{EM:} Time-sensitive safety and escalation; admission vs. DC.
+  \item \textbf{Psych:} Anxiety/panic overlay, interactions, and longitudinal
+        risks; how continuity artifacts assist judgment.
+\end{itemize}
+
+\subsection*{Baseline (OpenMRS) navigation map}
+\begin{enumerate}
+  \item \textbf{Landing:} Patient dashboard for the assigned case.
+  \item \textbf{Notes:} Read triage and progress notes; add a brief rationale
+        (if a notes area is provided for the study user).
+  \item \textbf{Labs:} Review time-stamped labs and reference ranges.
+  \item \textbf{Medications:} Review current/previous meds and adherence notes.
+  \item \textbf{Imaging/Reports:} Read ECG/CXR text reports (no images).
+  \item \textbf{Timeline:} Cross-check event order (onset $\rightarrow$ tests).
+\end{enumerate}
+
+\subsection*{HPH navigation map}
+\begin{enumerate}
+  \item \textbf{Overview:} Read structured summary and provenance panel.
+  \item \textbf{Notes:} Read triage/progress excerpts with citations.
+  \item \textbf{Labs:} Review trends/flags (values equal to Baseline).
+  \item \textbf{Medications:} Review list; see interaction checks if present.
+  \item \textbf{Reports:} Read ECG/CXR text; follow provided citations.
+  \item \textbf{Timeline:} Verify event order and latency between steps.
+\end{enumerate}
+
+\subsection*{Interaction constraints (parity enforcement)}
+\begin{itemize}
+  \item No external search, no copy/paste into other tools.
+  \item No new orders actually placed; all actions are hypothetical.
+  \item No editing of patient data; notes are study artifacts only.
+  \item Stay within the allocated time; notify when done.
+\end{itemize}
+
+\subsection*{Captured artifacts and measures}
+\begin{itemize}
+  \item Screen/audio recording with timestamps.
+  \item Notes/rationales entered (study area only).
+  \item Task completion indicators (checklist).
+  \item Likert outcomes: usefulness, decision support, explainability,
+        information continuity, workflow fit; optional NASA-TLX.
+\end{itemize}
+
+\subsection*{Moderator prompts (use sparingly)}
+\begin{itemize}
+  \item ``Please think aloud as you work.''
+  \item ``What would you do next, and why?''
+  \item ``What information is missing or uncertain?''
+  \item ``How did this view help or hinder your decision?''
+\end{itemize}
+
+\subsection*{Deviations and fail-safes}
+\begin{itemize}
+  \item If a page fails to load, pause the timer, refresh once, then continue.
+  \item If a role account logs out, resume with the same case and workflow.
+  \item Record any deviation and its duration in the session log.
+\end{itemize}
