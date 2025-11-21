@@ -1,0 +1,105 @@
+
+% === Appendix: Synthetic Vignette + Administration Protocol ===
+
+\section{Synthetic Vignette and Administration Protocol}
+\label{app:vignette}
+
+\subsection*{Vignette A (Acute Care: Chest Pain in Primary/Urgent Setting)}
+\textbf{Chief complaint:} ``Chest pain for 3 hours.''
+
+\textbf{Triage note (nurse, arrival T0):}
+\begin{itemize}
+  \item 54-year-old male; abrupt retrosternal pressure while lifting boxes.
+  \item Pain 7/10, radiates to left arm; associated diaphoresis and mild nausea.
+  \item No syncope; no dyspnea at rest. Walk-in; arrived by car.
+\end{itemize}
+
+\textbf{Past medical history:}
+\begin{itemize}
+  \item Hypertension (10 years), hyperlipidemia, former smoker (20 pack-years).
+  \item Father died of MI at 58.
+\end{itemize}
+
+\textbf{Medications/allergies:}
+\begin{itemize}
+  \item Amlodipine 10 mg daily; Atorvastatin 40 mg nightly.
+  \item No known drug allergies.
+\end{itemize}
+
+\textbf{Vital signs at T0:}
+\begin{itemize}
+  \item BP 156/92 mmHg; HR 104 bpm; RR 18; Temp 36.8$^\circ$C; SpO$_2$ 97\% RA.
+\end{itemize}
+
+\textbf{Initial tests (available at T+15 min):}
+\begin{itemize}
+  \item ECG: sinus tachycardia; non-specific ST-T changes (no ST elevation).
+  \item Troponin I (high-sensitivity): pending at T+15; available at T+60.
+  \item Basic labs (CBC, BMP, lipid panel): pending.
+\end{itemize}
+
+\textbf{Imaging (available on request):}
+\begin{itemize}
+  \item Portable chest X-ray: not yet performed.
+\end{itemize}
+
+\textbf{Progress note (physician, T+60):}
+\begin{itemize}
+  \item Troponin I (hs): 24 ng/L (ULN 18); repeat at T+120 pending.
+  \item Pain decreased to 3/10 after rest; persists with exertion.
+\end{itemize}
+
+\textbf{Uncertainty/missingness intentionally included:}
+\begin{itemize}
+  \item No prior ECG on file; medication adherence unclear.
+  \item Exact symptom onset time self-reported; no external records available.
+\end{itemize}
+
+\textbf{Artifacts to load in the prototype:}
+\begin{itemize}
+  \item Triage note, vital trend table, structured meds list, ECG text report,
+        labs table (with timestamps), imaging placeholder, timeline view.
+\end{itemize}
+
+\subsection*{Role-based prompts (to display in-session)}
+\begin{itemize}
+  \item \textbf{Generalist (IM/FP):} Identify immediate risks, initial orders,
+        and disposition. How does the framework support information continuity?
+  \item \textbf{Emergency:} Triage safety, time-sensitive decisions, and
+        escalation criteria. What signals are surfaced at a glance?
+  \item \textbf{Psychiatry/Mental Health:} Screen for anxiety/panic overlay,
+        medication interactions, and follow-up continuity. Which longitudinal
+        elements matter to you here?
+\end{itemize}
+
+\subsection*{Administration protocol (within-subjects, counterbalanced)}
+\begin{enumerate}
+  \item \textbf{Design:} 2 (workflow: standard vs. prototype) $\times$ 2 (case:
+        A vs. B) within-subjects; Latin-square counterbalancing of order.
+  \item \textbf{Flow per participant (40--60 min):}
+    \begin{enumerate}
+      \item Consent; 2-min orientation; start think-aloud.
+      \item Block 1: Case (A or B) with \emph{standard workflow}. (10--12 min)
+      \item Block 2: Case (A or B) with \emph{prototype}. (10--12 min)
+      \item Repeat Blocks 1--2 with the other case, swapping workflow order.
+      \item Post-task questionnaires (Likert scales) and 8--10 min interview.
+    \end{enumerate}
+  \item \textbf{Measures:} usefulness, decision support, explainability,
+        information continuity, workflow fit, optional NASA-TLX.
+  \item \textbf{Artifacts captured:} screen/audio recording, timestamps, orders
+        placed, notes generated (de-identified), questionnaire responses.
+\end{enumerate}
+
+\subsection*{Sample size rationale}
+With a within-subjects design, each clinician experiences both workflows on
+both cases, allowing paired comparisons. Usability and early mixed-methods
+studies commonly use $n=6$--$12$ to identify the majority of major issues and
+reach thematic saturation across roles while keeping sessions feasible.
+Stratifying specialties (e.g., IM/FP, EM, Psychiatry) ensures role-specific
+feedback.
+
+\subsection*{Notes}
+Case B (chronic, multimorbidity) is prepared similarly (e.g., type 2 diabetes,
+hypertension, depression, polypharmacy) with longitudinal labs, meds changes,
+and missingness (e.g., gaps in adherence). This appendix illustrates structure
+and administration; all values are synthetic and for research use.
